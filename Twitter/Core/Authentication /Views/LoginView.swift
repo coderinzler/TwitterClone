@@ -11,27 +11,15 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     var body: some View {
-        //Parent container
+        
+        //parent container
         VStack{
-            // Header view
-            VStack(alignment: .leading){
-                HStack{Spacer()}
-                Text("Hello.")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                
-                Text("Welcome back")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-            }
-            .frame(height:260)
-            .padding()
-            .background(Color(.systemBlue))
-            .foregroundColor(.white)
-            .clipShape(RoundedShape(corners: [.bottomRight]))
+            AuthHeaderView(title1: "Hello.",title2: "Welcome Back")
             
             VStack(spacing:40){
-                CustomInputField(imageName: "envelope", placeholderText: "Email", text: $email)
+                CustomInputField(imageName: "envelope",
+                placeholderText: "Email",text: $email)
+                
                 CustomInputField(imageName: "lock", placeholderText: "Password", text: $password)
             }
             .padding(.horizontal,32)
@@ -39,21 +27,22 @@ struct LoginView: View {
             
             HStack{
                 Spacer()
+                
                 NavigationLink{
-                    Text("Reset Password View")
-                }label: {
-                    Text("Forgot password")
+                    Text("Reset password view")
+                }label:{
+                    Text("Forgot password?")
                         .font(.caption)
-                        .fontWeight(.semibold)
+                        .fontWeight(.bold)
                         .foregroundColor(Color(.systemBlue))
                         .padding(.top)
                         .padding(.trailing,24)
                 }
             }
             
-            Button {
+            Button{
                 // action goes here
-            }label: {
+            }label:{
                 Text("Sign In")
                     .font(.headline)
                     .foregroundColor(.white)
@@ -62,17 +51,17 @@ struct LoginView: View {
                     .clipShape(Capsule())
                     .padding()
             }
-            .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y:0)
+            .shadow(color: .gray.opacity(0.5), radius: 10,x:0,y:0)
             
             Spacer()
             
-            NavigationLink {
+            NavigationLink{
                 RegistrationView()
                     .navigationBarHidden(true)
             }label:{
                 HStack{
                     Text("Don't have an account?")
-                        .font(.caption)
+                        .font(.footnote)
                     
                     Text("Sign Up")
                         .font(.footnote)
@@ -86,6 +75,8 @@ struct LoginView: View {
         .navigationBarHidden(true)
     }
 }
+
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
