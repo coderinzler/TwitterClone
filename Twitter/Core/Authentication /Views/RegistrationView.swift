@@ -16,6 +16,12 @@ struct RegistrationView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         VStack{
+            
+            
+            NavigationLink(destination:ProfilePhotoSelectorView(),isActive: $viewModel.didAuthenticateUser,label: {})
+            
+            
+            
             AuthHeaderView(title1: "Get Started",title2: "Create your account")
             
             
@@ -24,7 +30,7 @@ struct RegistrationView: View {
                 CustomInputField(imageName: "person", placeholderText: "Username", text: $username)
                 CustomInputField(imageName: "person", placeholderText: "Full Name", text: $fullname)
                 CustomInputField(imageName: "lock", placeholderText: "Password", text: $password)
-            }
+            } 
             .padding(32)
             
             

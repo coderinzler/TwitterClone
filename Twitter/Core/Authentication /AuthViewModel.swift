@@ -10,15 +10,23 @@ import Firebase
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
-    
+    @Published var didAuthenticateUser = false
     
     init() {
         self.userSession = Auth.auth().currentUser
-        //print("DEBUG: User session is: \(self.userSession)")
+        print("DEBUG: User session is: \(self.userSession?.uid)")
     }
     
     func signIn(withEmail email: String, password: String) {
-        print("DEBUG: Signed In with email \(email)")
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: Failed to sign in with error \(error.localizedDescription)")
+                return
+            }
+            guard let user = result?.user else {return}
+            self.userSession = user
+            print("DEBUG: Did log user in...")
+        }
     }
     
     func signUp(withEmail email: String, password: String, fullname: String, username: String) {
@@ -42,7 +50,7 @@ class AuthViewModel: ObservableObject {
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data) { _ in
-                    print("DEBUG: Did upload user data")
+                    self.didAuthenticateUser = true 
                 }
         }
     }
