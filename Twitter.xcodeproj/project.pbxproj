@@ -37,6 +37,7 @@
 		8C46A5792A82FFFF00198E29 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C46A5782A82FFFF00198E29 /* FirebaseFirestoreSwift */; };
 		8C46A57B2A82FFFF00198E29 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8C46A57A2A82FFFF00198E29 /* FirebaseStorage */; };
 		8C478D3C2A84332E00F75C25 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C478D3B2A84332E00F75C25 /* AuthViewModel.swift */; };
+		8C5441262A84FE5E00A3A6A6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5441252A84FE5E00A3A6A6 /* ImagePicker.swift */; };
 		8C62679D2A84E282008DC607 /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C62679C2A84E282008DC607 /* ProfilePhotoSelectorView.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		8AD9786F2A4362FD00242D43 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
 		8C46A56D2A82FDB700198E29 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C478D3B2A84332E00F75C25 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = "Twitter/Core/Authentication /AuthViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		8C5441252A84FE5E00A3A6A6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		8C62679C2A84E282008DC607 /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 		8A6B368C2A3651B000858336 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8C5441242A84FE4F00A3A6A6 /* Utilities */,
 				8AD978682A435A4A00242D43 /* Authentication  */,
 				8AB2A21E2A3C63A0007D4E1A /* UploadTweet */,
 				8A66C20D2A381FC800E1183E /* SideMenu */,
@@ -376,6 +379,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		8C5441242A84FE4F00A3A6A6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8C5441252A84FE5E00A3A6A6 /* ImagePicker.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -458,6 +469,7 @@
 			files = (
 				8C478D3C2A84332E00F75C25 /* AuthViewModel.swift in Sources */,
 				8A9037092A36FDA800E7FEAE /* MessagesView.swift in Sources */,
+				8C5441262A84FE5E00A3A6A6 /* ImagePicker.swift in Sources */,
 				8A6B367E2A36477700858336 /* ContentView.swift in Sources */,
 				8A6B36952A3654CD00858336 /* TweetRowView.swift in Sources */,
 				8A3B86292A458FCB00492DBF /* AuthHeaderView.swift in Sources */,

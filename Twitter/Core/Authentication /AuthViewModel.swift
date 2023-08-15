@@ -39,7 +39,6 @@ class AuthViewModel: ObservableObject {
             }
             
             guard let user = result?.user else {return}
-            self.userSession = user
             
             print("DEBUG: Registered user successfully")
             print("DEBUG: User is \(self.userSession)")
